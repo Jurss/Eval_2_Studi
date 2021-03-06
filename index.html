@@ -5,27 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Roll And Dice game, compete against a friend in this game of luck and betting">
 
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+
     <link rel="stylesheet" href="style.css">
 
-    <title>Document</title>
+    <title>Roll And Dice</title>
 </head>
 
 <body>
     <ion-app>
         <ion-content>
             <ion-grid>
+                <ion-row class="player">
+                    <p id="player_name1">Player1</p>
+                    <p class="global_score">0</p>
+                    <div class="current_score">
+                        <p>Current</p>
+                        <p id="current_score_1">0</p>
+                    </div>
+                </ion-row>
+
                 <ion-row>
-                    <ion-row>
-                        <ion-col>
-                            <div class="test">
-                                cdsml
-                            </div>
-                        </ion-col>
-                    </ion-row>
+                    <div>
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                        <p>NEW GAME</p>
+                    </div>
+                    <div id="de">
+                        <img src="Images/de_1.png" alt="de_1">
+                        <img src="Images/de_2.png" alt="de_2">
+                        <img src="Images/de_3.png" alt="de_3">
+                        <img src="Images/de_4.png" alt="de_4">
+                        <img src="Images/de_5.png" alt="de_5">
+                        <img src="Images/de_6.png" alt="de_6">
+                    </div>
+                </ion-row>
+
+                <ion-row class="player">
+                    <p id="player_name2">Player2</p>
+                    <p class="global_score">0</p>
+                    <div class="current_score">
+                        <p>Current</p>
+                        <p id="current_score_2">0</p>
+                    </div>
                 </ion-row>
             </ion-grid>
         </ion-content>
