@@ -32,11 +32,6 @@ ion-icon {
     color: #bbbbbb;
 }
 
-#de {
-    height: 100px;
-    width: 100px;
-}
-
 #game_menu {
     width: 30%;
     display: flex;
@@ -51,8 +46,6 @@ ion-icon {
     align-items: center;
 }
 
-.hold {}
-
 .current_score {
     background: #eb4d4c;
     display: flex;
@@ -61,8 +54,6 @@ ion-icon {
     align-items: center;
     padding: 10px;
 }
-
-#de_1 {}
 
 #de_2 {
     display: none;
