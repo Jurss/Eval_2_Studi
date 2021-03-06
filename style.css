@@ -46,6 +46,10 @@ ion-icon {
     align-items: center;
 }
 
+.global_score {
+    color: #eb4d4c;
+}
+
 .current_score {
     background: #eb4d4c;
     display: flex;
@@ -55,6 +59,8 @@ ion-icon {
     padding: 10px;
 }
 
+
+/*
 #de_2 {
     display: none;
 }
@@ -73,7 +79,7 @@ ion-icon {
 
 #de_6 {
     display: none;
-}
+}*/
 
 .icon_align:hover,
 img:hover {
