@@ -1,0 +1,90 @@
+ion-content {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    --background: linear-gradient(60deg, #e05718, #ee9139);
+}
+
+ion-grid {
+    background: #f7f7f7;
+    margin-top: 0.5%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    margin-bottom: 0.5%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+ion-icon {
+    color: #eb4d4c;
+}
+
+.player {
+    height: 97vh;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#player_name2 {
+    color: #bbbbbb;
+}
+
+#de {
+    height: 100px;
+    width: 100px;
+}
+
+#game_menu {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icon_align {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hold {}
+
+.current_score {
+    background: #eb4d4c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#de_1 {}
+
+#de_2 {
+    display: none;
+}
+
+#de_3 {
+    display: none;
+}
+
+#de_4 {
+    display: none;
+}
+
+#de_5 {
+    display: none;
+}
+
+#de_6 {
+    display: none;
+}
+
+.icon_align:hover,
+img:hover {
+    cursor: pointer;
+}

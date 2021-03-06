@@ -11,6 +11,9 @@
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,100&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 
     <title>Roll And Dice</title>
@@ -29,18 +32,26 @@
                     </div>
                 </ion-row>
 
-                <ion-row>
-                    <div>
+                <ion-row id="game_menu">
+                    <div class="icon_align">
                         <ion-icon name="add-circle-outline"></ion-icon>
                         <p>NEW GAME</p>
                     </div>
                     <div id="de">
-                        <img src="Images/de_1.png" alt="de_1">
-                        <img src="Images/de_2.png" alt="de_2">
-                        <img src="Images/de_3.png" alt="de_3">
-                        <img src="Images/de_4.png" alt="de_4">
-                        <img src="Images/de_5.png" alt="de_5">
-                        <img src="Images/de_6.png" alt="de_6">
+                        <img id="de_1" src="Images/de_1.png" alt="de_1">
+                        <img id="de_2" src="Images/de_2.png" alt="de_2">
+                        <img id="de_3" src="Images/de_3.png" alt="de_3">
+                        <img id="de_4" src="Images/de_4.png" alt="de_4">
+                        <img id="de_5" src="Images/de_5.png" alt="de_5">
+                        <img id="de_6" src="Images/de_6.png" alt="de_6">
+                    </div>
+                    <div class="icon_align">
+                        <ion-icon name="refresh-circle-outline"></ion-icon>
+                        <p>ROLL DICE</p>
+                    </div>
+                    <div class="icon_align">
+                        <ion-icon name="download-outline"></ion-icon>
+                        <p>HOLD</p>
                     </div>
                 </ion-row>
 
