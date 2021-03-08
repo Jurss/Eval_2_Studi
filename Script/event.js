@@ -36,6 +36,7 @@ newGame.addEventListener('click', () => {
     redPoint2.style.display = 'none';
 
     globalScorePlayer1.innerHTML = '' + 0;
+    globalScorePlayer2.innerHTML = '' + 0;
     gameContinue = true
     rollDice(); // call function  who launches the dice
 })
