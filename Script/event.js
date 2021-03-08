@@ -22,11 +22,14 @@ playerName1.innerHTML += 'Player1';
 playerName2.innerHTML += 'Player2';
 
 newGame.addEventListener('click', () => {
-    name1 = prompt('Quel est le nom du joueur 1 ?');
-    name2 = prompt('Quel est le nom du joueur 2 ?');
+    name1 = prompt('Quel est le nom du joueur 1 ? (10 character max)');
+    name1 = name1.substr(0, 10);
+    name2 = prompt('Quel est le nom du joueur 2 ? (10 character max)');
+    name2 = name2.substr(0, 10);
 
     playerName1.innerHTML = name1;
     playerName2.innerHTML = name2;
+    presentModal();
 
     redPoint1.style.display = 'block';
     redPoint2.style.display = 'none';
