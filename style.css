@@ -59,29 +59,21 @@ ion-icon {
     padding: 10px;
 }
 
-
-/*
-#de_2 {
-    display: none;
-}
-
-#de_3 {
-    display: none;
-}
-
-#de_4 {
-    display: none;
-}
-
-#de_5 {
-    display: none;
-}
-
-#de_6 {
-    display: none;
-}*/
-
 .icon_align:hover,
 img:hover {
     cursor: pointer;
+}
+
+#red_point_1 {
+    background: #eb4d4c;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+
+#red_point_2 {
+    background: #eb4d4c;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
 }
