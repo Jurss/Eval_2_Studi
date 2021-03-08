@@ -96,3 +96,29 @@ img:hover {
     -moz-user-select: none;
     -ms-user-select: none;
 }
+
+@media screen and (max-width: 650px) {
+    ion-grid {
+        display: flex;
+        flex-direction: column;
+    }
+    #background {
+        /*Player*/
+        background: linear-gradient(180deg, #f7f7f7 50%, #ffffff 50%);
+    }
+    .player {
+        width: 96vw;
+        height: 40vh;
+    }
+    #game_menu {
+        width: 95vw;
+        height: 18vh;
+        display: flex;
+        flex-direction: row;
+        font-size: 18px;
+    }
+    .icon_align:hover {
+        background: inherit;
+        color: #eb4d4c;
+    }
+}

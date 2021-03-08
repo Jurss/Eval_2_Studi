@@ -14,6 +14,7 @@ let currentScorePlayer1 = document.getElementById('current_score_1');
 let currentScorePlayer2 = document.getElementById('current_score_2');
 let current_score = 0;
 let turnOn = 0;
+let gameContinue = false;
 
 redPoint1.style.display = 'none';
 redPoint2.style.display = 'none';
@@ -34,6 +35,8 @@ newGame.addEventListener('click', () => {
     redPoint1.style.display = 'block';
     redPoint2.style.display = 'none';
 
+    globalScorePlayer1.innerHTML = '' + 0;
+    gameContinue = true
     rollDice(); // call function  who launches the dice
 })
 
@@ -55,76 +58,92 @@ function rollDice() {
     }
 
     roll.addEventListener('click', () => {
-        diceValue = getRandomInt(6);
-        if (diceValue == 0) {
-            insertImage.src = diceFace[0];
-            dice1.innerHTML = '';
-            dice1.appendChild(insertImage);
-            current_score = 0;
-            currentScorePlayer1.innerHTML = '' + current_score;
-            currentScorePlayer2.innerHTML = '' + current_score;
-            turnOn++;
+        if (gameContinue) {
+            diceValue = getRandomInt(6);
+            if (diceValue == 0) {
+                insertImage.src = diceFace[0];
+                dice1.innerHTML = '';
+                dice1.appendChild(insertImage);
+                current_score = 0;
+                currentScorePlayer1.innerHTML = '' + current_score;
+                currentScorePlayer2.innerHTML = '' + current_score;
+                turnOn++;
 
-        } else if (diceValue == 1) {
-            insertImage.src = diceFace[1];
-            dice1.innerHTML = '';
-            dice1.appendChild(insertImage);
-            current_score += (diceValue + 1)
-        } else if (diceValue == 2) {
-            insertImage.src = diceFace[2];
-            dice1.innerHTML = '';
-            dice1.appendChild(insertImage);
-            current_score += (diceValue + 1)
-        } else if (diceValue == 3) {
-            insertImage.src = diceFace[3];
-            dice1.innerHTML = '';
-            dice1.appendChild(insertImage);
-            current_score += (diceValue + 1)
-        } else if (diceValue == 4) {
-            insertImage.src = diceFace[4];
-            dice1.innerHTML = '';
-            dice1.appendChild(insertImage);
-            current_score += (diceValue + 1)
-        } else if (diceValue == 5) {
-            insertImage.src = diceFace[5];
-            dice1.innerHTML = '';
-            dice1.appendChild(insertImage);
-            current_score += (diceValue + 1)
+            } else if (diceValue == 1) {
+                insertImage.src = diceFace[1];
+                dice1.innerHTML = '';
+                dice1.appendChild(insertImage);
+                current_score += (diceValue + 1)
+            } else if (diceValue == 2) {
+                insertImage.src = diceFace[2];
+                dice1.innerHTML = '';
+                dice1.appendChild(insertImage);
+                current_score += (diceValue + 1)
+            } else if (diceValue == 3) {
+                insertImage.src = diceFace[3];
+                dice1.innerHTML = '';
+                dice1.appendChild(insertImage);
+                current_score += (diceValue + 1)
+            } else if (diceValue == 4) {
+                insertImage.src = diceFace[4];
+                dice1.innerHTML = '';
+                dice1.appendChild(insertImage);
+                current_score += (diceValue + 1)
+            } else if (diceValue == 5) {
+                insertImage.src = diceFace[5];
+                dice1.innerHTML = '';
+                dice1.appendChild(insertImage);
+                current_score += (diceValue + 1)
+            }
+            if (turnOn % 2 === 0) {
+                currentScorePlayer1.innerHTML = '' + current_score;
+                redPoint1.style.display = 'block';
+                redPoint2.style.display = 'none';
+
+            } else if (turnOn % 2 !== 0) {
+                redPoint1.style.display = 'none';
+                redPoint2.style.display = 'block';
+                currentScorePlayer2.innerHTML = '' + current_score;
+            }
+
+
         }
-        if (turnOn % 2 === 0) {
-            currentScorePlayer1.innerHTML = '' + current_score;
-            redPoint1.style.display = 'block';
-            redPoint2.style.display = 'none';
+    })
 
-        } else if (turnOn % 2 !== 0) {
+}
+
+hold.addEventListener('click', () => {
+    if (gameContinue) {
+        if (turnOn % 2 === 0) {
+            let num = parseInt(globalScorePlayer1.lastChild.nodeValue, 10)
+            num = num + current_score
+            globalScorePlayer1.innerHTML = '' + num
+            current_score = 0;
+            currentScorePlayer1.innerHTML = '0';
             redPoint1.style.display = 'none';
             redPoint2.style.display = 'block';
-            currentScorePlayer2.innerHTML = '' + current_score;
+            turnOn++;
+
+            if (num >= 100) {
+                alert(`${name1} à gagner !`);
+                gameContinue = false;
+            }
+            num = 0;
+
+        } else {
+            let num = parseInt(globalScorePlayer2.lastChild.nodeValue, 10)
+            num = num + current_score
+            globalScorePlayer2.innerHTML = '' + num
+            current_score = 0;
+            currentScorePlayer2.innerHTML = '0';
+            redPoint1.style.display = 'block';
+            redPoint2.style.display = 'none';
+            turnOn++;
+            if (num >= 100) {
+                alert(`${name2} à gagner !`);
+                gameContinue = false;
+            }
+            num = 0;
         }
-
-
-    })
-}
-hold.addEventListener('click', () => {
-    if (turnOn % 2 === 0) {
-        let num = parseInt(globalScorePlayer1.lastChild.nodeValue, 10)
-        num = num + current_score
-        globalScorePlayer1.innerHTML = '' + num
-        current_score = 0;
-        num = 0;
-        currentScorePlayer1.innerHTML = '0';
-        redPoint1.style.display = 'none';
-        redPoint2.style.display = 'block';
-        turnOn++;
-    } else {
-        let num = parseInt(globalScorePlayer2.lastChild.nodeValue, 10)
-        num = num + current_score
-        globalScorePlayer2.innerHTML = '' + num
-        current_score = 0;
-        num = 0;
-        currentScorePlayer2.innerHTML = '0';
-        redPoint1.style.display = 'block';
-        redPoint2.style.display = 'none';
-        turnOn++;
     }
 })
