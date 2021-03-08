@@ -114,7 +114,7 @@ function rollDice() {
 }
 
 hold.addEventListener('click', () => {
-    if (gameContinue) {
+    if (gameContinue && current_score != 0) {
         if (turnOn % 2 === 0) {
             let num = parseInt(globalScorePlayer1.lastChild.nodeValue, 10)
             num = num + current_score
@@ -146,5 +146,7 @@ hold.addEventListener('click', () => {
             }
             num = 0;
         }
+    } else if (current_score === 0 && gameContinue) {
+        alert('You must first roll the dice');
     }
 })
