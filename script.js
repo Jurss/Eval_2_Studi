@@ -8,6 +8,11 @@ let name2 = '';
 let insertImage = document.createElement('img');
 let redPoint1 = document.getElementById('red_point_1');
 let redPoint2 = document.getElementById('red_point_2');
+let hold = document.getElementById('hold');
+let currentScorePlayer1 = document.getElementById('current_score_1');
+let currentScorePlayer2 = document.getElementById('current_score_2');
+let current_score = 0;
+let turnOn = 0;
 
 redPoint1.style.display = 'none';
 redPoint2.style.display = 'none';
@@ -25,14 +30,13 @@ newGame.addEventListener('click', () => {
     redPoint1.style.display = 'block';
     redPoint2.style.display = 'none';
 
-    rollDice();
+    rollDice(); // call function  who launches the dice
 })
 
 function rollDice() {
-    let turnOn = 0;
+
     let imgDice = document.getElementById('de');
     let roll = document.getElementById('roll_dice');
-    let hold = document.getElementById('hold');
     let diceFace = ['Images/de_1.png', 'Images/de_2.png', 'Images/de_3.png', 'Images/de_4.png', 'Images/de_5.png', 'Images/de_6.png', ];
     let diceValue;
     let dice1 = document.getElementById('de_1');
@@ -45,10 +49,6 @@ function rollDice() {
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }
-
-    let currentScorePlayer1 = document.getElementById('current_score_1');
-    let currentScorePlayer2 = document.getElementById('current_score_2');
-    let current_score = 0;
 
     roll.addEventListener('click', () => {
         diceValue = getRandomInt(6);
@@ -97,5 +97,30 @@ function rollDice() {
             redPoint2.style.display = 'block';
             currentScorePlayer2.innerHTML = '' + current_score;
         }
+
+
     })
 }
+hold.addEventListener('click', () => {
+    if (turnOn % 2 === 0) {
+        let num = parseInt(globalScorePlayer1.lastChild.nodeValue, 10)
+        num = num + current_score
+        globalScorePlayer1.innerHTML = '' + num
+        current_score = 0;
+        num = 0;
+        currentScorePlayer1.innerHTML = '0';
+        redPoint1.style.display = 'none';
+        redPoint2.style.display = 'block';
+        turnOn++;
+    } else {
+        let num = parseInt(globalScorePlayer2.lastChild.nodeValue, 10)
+        num = num + current_score
+        globalScorePlayer2.innerHTML = '' + num
+        current_score = 0;
+        num = 0;
+        currentScorePlayer2.innerHTML = '0';
+        redPoint1.style.display = 'block';
+        redPoint2.style.display = 'none';
+        turnOn++;
+    }
+})
