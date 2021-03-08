@@ -22,14 +22,14 @@
 <body>
     <ion-app>
         <ion-content>
-            <ion-grid>
-                <ion-row class="player">
+            <ion-grid id="background">
+                <ion-row class="player" id="player1">
                     <p id="player_name1"></p>
                     <span id="red_point_1"></span>
                     <p class="global_score" id="global_score_1">0</p>
                     <div class="current_score">
                         <p>Current</p>
-                        <p id="current_score_1"></p>
+                        <p id="current_score_1">0</p>
                     </div>
                 </ion-row>
 
@@ -64,7 +64,6 @@
         </ion-content>
     </ion-app>
     <script src="Script/event.js"></script>
-    <script src="Script/elementsDOM.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@4.7.4/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@4.7.4/dist/ionicons/ionicons.js"></script>
 </body>

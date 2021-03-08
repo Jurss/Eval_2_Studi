@@ -1,4 +1,5 @@
 let newGame = document.getElementById('new_game');
+let bgPlayer = document.getElementById('player1');
 let playerName1 = document.getElementById('player_name1');
 let playerName2 = document.getElementById('player_name2');
 let globalScorePlayer1 = document.getElementById('global_score_1');
